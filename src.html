@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>src</title>
+</head>
+<body>
+    <img src="../media/1.jpg" id="img1" onmouseover="image2()" onmouseout="image1()">
+    <script>
+        function image2(){
+            document.getElementById('img1').src="../media/2.jpg"
+        }
+        function image1(){
+            document.getElementById('img1').src="../media/1.jpg"
+        }
+    </script>
+</body>
+</html>
