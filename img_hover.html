@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img_hover</title>
+    <style>
+        .container{
+            border-style: solid;
+            border-radius: 10px;
+        }
+        .row1, .row2{
+            text-align: center;
+            margin: 50px;
+        }
+        img{
+            height: 200px;
+            width:200px;
+            margin-left: 50px;
+            border-style: solid;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row1">
+            <img src="../media/3.png" id="img1">
+        </div>
+        <div class="row2">
+            <img src="../media/4.jpg" id="img2" onmouseover="image2()" onmouseout="image1()">
+            <img src="../media/5.jpg" id="img3" onmouseover="image3()" onmouseout="image1()">
+            <img src="../media/6.jpg" id="img4" onmouseover="image4()" onmouseout="image1()">
+            <img src="../media/7.jpg" id="img5" onmouseover="image5()" onmouseout="image1()">
+        </div>
+    </div>
+
+    <script>
+        function image1(){
+            document.getElementById('img1').src="../media/3.png";
+        }
+        function image2(){
+            document.getElementById('img1').src="../media/4.jpg";
+        }
+        function image3(){
+            document.getElementById('img1').src="../media/5.jpg";
+        }
+        function image4(){
+            document.getElementById('img1').src="../media/6.jpg";
+        }
+        function image5(){
+            document.getElementById('img1').src="../media/7.jpg";
+        }
+    </script>
+</body>
+</html>
