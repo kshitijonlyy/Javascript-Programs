@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imgSize_SAMPLE</title>
+    <style>
+        .container{
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 2px;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        img{
+            margin: 20px;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row1">
+            <img src="../media/10.jpg" alt="image1" id="img1" height="250px" width="250px" onmouseover="zoomIn1()" onmouseout="zoomOut1()">
+            <img src="../media/4.jpg" alt="image2" id="img2" height="250px" width="250px" onmouseover="zoomIn2()" onmouseout="zoomOut2()">
+        </div>
+        <div class="row2">
+            <img src="../media/5.jpg" alt="image3" id="img3" height="250px" width="250px" onmouseover="zoomIn3()" onmouseout="zoomOut3()">
+            <img src="../media/8.jpg" alt="image4" id="img4" height="250px" width="250px" onmouseover="zoomIn4()" onmouseout="zoomOut4()">
+        </div>
+        <div class="row3">
+            <img src="../media/7.jpg" alt="image5" id="img5" height="250px" width="250px" onmouseover="zoomIn5()" onmouseout="zoomOut5()">
+            <img src="../media/9.jpg" alt="image6" id="img6" height="250px" width="250px" onmouseover="zoomIn6()" onmouseout="zoomOut6()">
+        </div>
+        <div class="row4">
+            <img src="../media/6.jpg" alt="image7" id="img7" height="250px" width="250px" onmouseover="zoomIn7()" onmouseout="zoomOut7()">
+            <img src="../media/3.png" alt="image8"id="img8" height="250px" width="250px" onmouseover="zoomIn8()" onmouseout="zoomOut8()">
+        </div>
+    </div>
+
+    <script>
+        function zoomIn1(){
+            document.getElementById('img1').height="500";
+            document.getElementById('img1').width="500";
+        }
+        function zoomOut1(){
+            document.getElementById('img1').height="250";
+            document.getElementById('img1').width="250";
+        }
+        function zoomIn2(){
+            document.getElementById('img2').height="500";
+            document.getElementById('img2').width="500";
+        }
+        function zoomOut2(){
+            document.getElementById('img2').height="250";
+            document.getElementById('img2').width="250";
+        }
+        function zoomIn3(){
+            document.getElementById('img3').height="500";
+            document.getElementById('img3').width="500";
+        }
+        function zoomOut3(){
+            document.getElementById('img3').height="250";
+            document.getElementById('img3').width="250";
+        }
+        function zoomIn4(){
+            document.getElementById('img4').height="500";
+            document.getElementById('img4').width="500";
+        }
+        function zoomOut4(){
+            document.getElementById('img4').height="250";
+            document.getElementById('img4').width="250";
+        }
+        function zoomIn5(){
+            document.getElementById('img5').height="500";
+            document.getElementById('img5').width="500";
+        }
+        function zoomOut5(){
+            document.getElementById('img5').height="250";
+            document.getElementById('img5').width="250";
+        }
+        function zoomIn6(){
+            document.getElementById('img6').height="500";
+            document.getElementById('img6').width="500";
+        }
+        function zoomOut6(){
+            document.getElementById('img6').height="250";
+            document.getElementById('img6').width="250";
+        }
+        function zoomIn7(){
+            document.getElementById('img7').height="500";
+            document.getElementById('img7').width="500";
+        }
+        function zoomOut7(){
+            document.getElementById('img7').height="250";
+            document.getElementById('img7').width="250";
+        }
+        function zoomIn8(){
+            document.getElementById('img8').height="500";
+            document.getElementById('img8').width="500";
+        }
+        function zoomOut8(){
+            document.getElementById('img8').height="250";
+            document.getElementById('img8').width="250";
+        }
+    </script>
+</body>
+</html>
