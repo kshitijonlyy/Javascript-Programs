@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gst_calculator</title>
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            word-spacing: 5px;
+        }
+        table{
+            margin-top: 50px;
+            margin-left:auto;
+            margin-right:auto;
+            font-size: 20px;
+        }
+        td{
+            padding-right: 30px;
+        }
+        input{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        button{
+            margin: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GST CALCULATOR</h1>
+    <table cellspacing="10px">
+        <tr>
+            <td>Enter Original Amount:</td>
+            <td><input type="number" id="o_price"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button onclick="calculate()">CALCULATE</button></td>
+        </tr>
+        <tr>
+            <td>GST (18%):</td>
+            <td><input type="number" id="gst" disabled></td>
+        </tr>
+        <tr>
+            <td>Final Amount:</td>
+            <td><input type="number" id="f_price" disabled></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculate(){
+            o_price = document.getElementById('o_price').value;
+            gst = 0.18 * parseFloat(o_price);
+            f_price = parseFloat(o_price) + gst;
+            document.getElementById('gst').value=gst;
+            document.getElementById('f_price').value=f_price;
+        }
+    </script>
+</body>
+</html>
