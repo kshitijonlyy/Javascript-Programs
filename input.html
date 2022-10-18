@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+<body>
+    <!-- changing attributes -->
+    <input type="text" id="field1">
+    <button onclick="fun1()">CLICK</button>
+    <br><br>
+
+    <!-- getting and showing values -->
+    <input type="text" id="field2">
+    <button onclick="fun2()">CLICK</button>
+    <br><br>
+
+    <!-- sum of two numbers -->
+    Enter First Number <input type="number" id="num1">
+    <br>
+    Enter Second Number <input type="number" id="num2">
+    <br>
+    <button onclick="fun3()">ADD</button>
+
+    <script>
+        function fun1(){
+            x = document.getElementById('field1');
+            x.type = 'number';
+            x.placeholder = 'Enter Phone Number';
+            x.disabled = false;
+        }
+        function fun2(){
+            name = document.getElementById('field2').value;
+            alert(name);
+        }
+        function fun3(){
+            a = document.getElementById('num1').value;
+            b = document.getElementById('num2').value;
+            c = parseInt(a) + parseInt(b);
+            console.log(c) // don't use '' while printing variables
+            
+            // c = a+b will CONCATENATE the numbers (numbers will be treated as strings by default)
+            // console.log(typeof(c)) will tell the datatype of c (it will print 'string' in the console)
+        }
+    </script>
+</body>
+</html>
