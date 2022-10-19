@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if_else2</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table{
+            margin-top: 50px;
+            margin-left:auto;
+            margin-right:auto;
+            font-size: 20px;
+        }
+        td{
+            padding-right: 30px;
+        }
+        input{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        button{
+            margin: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        div{
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 22px;
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>IF-ELSE DIV GENERATOR</h1>
+    <table cellspacing="10px">
+        <tr>
+            <td>Enter First Number:</td>
+            <td><input type="number" id="first"></td>
+        </tr>
+        <tr>
+            <td>Enter Second Number:</td>
+            <td><input type="number" id="second"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button onclick="compare()">COMPARE</button></td>
+        </tr>
+    </table>
+    <div id="generated"></div>
+
+    <script>
+        function compare(){
+            a = document.getElementById('first').value;
+            b = document.getElementById('second').value;
+            styling = document.getElementById('generated').style;
+
+            if (a<b){
+                styling.backgroundColor='red';
+                styling.color='white';
+                styling.borderWidth='2px';
+                styling.borderStyle='solid';
+                styling.borderColor='black';
+                styling.borderRadius='5px';
+                styling.height='200px';
+                document.getElementById('generated').innerHTML='First number is less than the second number.';
+            }
+            else if (a==b){
+                styling.backgroundColor='yellow';
+                styling.color='black';
+                styling.borderWidth='2px';
+                styling.borderStyle='solid';
+                styling.borderColor='black';
+                styling.borderRadius='5px';
+                styling.height='200px';
+                document.getElementById('generated').innerHTML='First number is equal to the second number.';
+            }
+            else{
+                styling.backgroundColor='green';
+                styling.color='white';
+                styling.borderWidth='2px';
+                styling.borderStyle='solid';
+                styling.borderColor='black';
+                styling.borderRadius='5px';
+                styling.height='200px';
+                document.getElementById('generated').innerHTML='First number is greater than the second number.';
+            }
+        }
+    </script>
+</body>
+</html>
