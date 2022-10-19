@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gst_calculator</title>
+    <title>bmi_calculator</title>
     <style>
         h1{
             text-align: center;
@@ -36,32 +36,37 @@
     </style>
 </head>
 <body>
-    <h1>GST CALCULATOR</h1>
+    <h1>BODY MASS INDEX (BMI) CALCULATOR</h1>
     <table cellspacing="10px">
         <tr>
-            <td>Enter Original Amount:</td>
-            <td><input type="number" id="o_price"></td>
+            <td>Enter Height (in meters):</td>
+            <td><input type="number" id="height"></td>
+        </tr>
+        <tr>
+            <td>Enter Weight (in kilograms):</td>
+            <td><input type="number" id="weight"></td>
         </tr>
         <tr>
             <td colspan="2" style="text-align: center;"><button onclick="calculate()">CALCULATE</button></td>
         </tr>
         <tr>
-            <td>GST (18%):</td>
-            <td><input type="number" id="gst" readonly></td>
+            <td>Square of Height:</td>
+            <td><input type="number" id="squareHT" readonly></td>
         </tr>
         <tr>
-            <td>Final Amount:</td>
-            <td><input type="number" id="f_price" readonly></td>
+            <td>BMI (Weight/Square of Height):</td>
+            <td><input type="number" id="bmi" readonly></td>
         </tr>
     </table>
 
     <script>
         function calculate(){
-            o_price = document.getElementById('o_price').value;
-            gst = 0.18 * parseFloat(o_price);
-            f_price = parseFloat(o_price) + gst;
-            document.getElementById('gst').value=gst;
-            document.getElementById('f_price').value=f_price;
+            height = document.getElementById('height').value;
+            weight = document.getElementById('weight').value;
+            squareHT = parseFloat(height)*parseFloat(height);
+            bmi = parseFloat(weight)/parseFloat(squareHT);
+            document.getElementById('squareHT').value = squareHT;
+            document.getElementById('bmi').value = bmi;
         }
     </script>
 </body>
