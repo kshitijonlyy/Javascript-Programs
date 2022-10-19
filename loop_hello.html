@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_hello</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table{
+            margin-top: 50px;
+            margin-left:auto;
+            margin-right:auto;
+            font-size: 20px;
+        }
+        td{
+            padding-right: 30px;
+        }
+        input{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        button{
+            margin: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        p{
+            text-align: center;
+            font-size: 17px;
+            color: rgb(83, 83, 83);
+        }
+    </style>
+</head>
+<body>
+    <h1>PRINTING HELLO USING ITERATION</h1>
+    <table cellspacing="10px">
+        <tr>
+            <td>Enter Iteration Count:</td>
+            <td><input type="number" id="counter"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button onclick="hit()">PRINT</button></td>
+        </tr>
+    </table>
+    <p>Output will be displayed in console.</p>
+
+    <script>
+        function hit(){
+            n = document.getElementById('counter').value;
+            for (i=1; i<=n; i++){
+                console.log('hello');
+            }
+        }
+    </script>
+</body>
+</html>
