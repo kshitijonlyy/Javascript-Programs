@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom_div</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table{
+            margin-top: 50px;
+            margin-left:auto;
+            margin-right:auto;
+            font-size: 20px;
+        }
+        td{
+            padding-right: 30px;
+        }
+        input{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        button{
+            margin: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        div{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #bg_color, #txt_color{
+            padding: 0px;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CUSTOM DIV GENERATOR</h1>
+    <table cellspacing="10px">
+        <tr>
+            <td>Choose Background Color:</td>
+            <td><input type="color" id="bg_color"></td>
+        </tr>
+        <tr>
+            <td>Choose Text Color:</td>
+            <td><input type="color" id="txt_color"></td>
+        </tr>
+        <tr>
+            <td>Enter Height:</td>
+            <td><input type="number" id="height"></td>
+        </tr>
+        <tr>
+            <td>Enter Width:</td>
+            <td><input type="number" id="width"></td>
+        </tr>
+        <tr>
+            <td>Add Text In Div:</td>
+            <td><input type="text" id="text"></td>
+        </tr>
+        
+        <tr>
+            <td colspan="2" style="text-align: center;"><button onclick="generate()">GENERATE</button></td>
+        </tr>
+    </table>
+    <div id="generated"></div>
+
+    <script>
+        function generate(){
+            bg_color = document.getElementById('bg_color').value;
+            txt_color = document.getElementById('txt_color').value;
+            h = document.getElementById('height').value;
+            w = document.getElementById('width').value;
+            text = document.getElementById('text').value;
+
+            styling = document.getElementById('generated').style;
+            styling.backgroundColor=bg_color;
+            styling.color=txt_color;
+            styling.height=h+'px';
+            styling.width=w+'px';
+            document.getElementById('generated').innerHTML=text;
+        }
+    </script>
+</body>
+</html>
