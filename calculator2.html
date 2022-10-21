@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator2</title>
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            word-spacing: 5px;
+        }
+        table{
+            margin-top: 50px;
+            margin-left:auto;
+            margin-right:auto;
+            font-size: 20px;
+        }
+        td{
+            padding-right: 30px;
+        }
+        input{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        button{
+            margin: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        select{
+            font-size: 18px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+    <table cellspacing="10px">
+        <tr>
+            <td>A:</td>
+            <td><input type="number" id="first" required></td>
+        </tr>
+        <tr>
+            <td>B:</td>
+            <td><input type="number" id="second" required></td>
+        </tr>
+        <tr>
+            <td>Select:</td>
+            <td>
+                <select id="operator" required >
+                    <option selected disabled>Select</option>
+                    <option value="add">+</option>
+                    <option value="diff">-</option>
+                    <option value="prod">*</option>
+                    <option value="div">/</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button onclick="calculate()">CALCULATE</button></td>
+        </tr>
+        <tr>
+            <td>Result:</td>
+            <td><input type="number" id="result" readonly></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculate(){
+            a = document.getElementById('first').value;
+            b = document.getElementById('second').value;
+            operator = document.getElementById('operator').value;
+
+            if(operator=='add'){
+                res = parseFloat(a) + parseFloat(b);
+                document.getElementById('result').value=res;
+            }
+            else if(operator=='diff'){
+                res = parseFloat(a) - parseFloat(b);
+                document.getElementById('result').value=res;
+            }
+            else if(operator=='prod'){
+                res = parseFloat(a) * parseFloat(b);
+                document.getElementById('result').value=res;
+            }
+            else if(operator=='div'){
+                res = parseFloat(a) / parseFloat(b);
+                document.getElementById('result').value=res;
+            }
+        }
+    </script>
+</body>
+</html>
