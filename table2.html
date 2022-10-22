@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table2</title>
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            word-spacing: 5px;
+        }
+        table{
+            margin-top: 50px;
+            margin-left:auto;
+            margin-right:auto;
+            font-size: 20px;
+        }
+        td{
+            padding-right: 30px;
+        }
+        input{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        button{
+            margin: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        select{
+            font-size: 18px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        p{
+            text-align: center;
+            font-size: 22px;
+        }
+        #title{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TABLE OF ANY NUMBER</h1>
+    <table cellspacing="10px">
+        <tr>
+            <td>Enter Any Number:</td>
+            <td><input type="number" id="num" required></td>
+        </tr>
+        <tr>
+            <td>Enter Start Point:</td>
+            <td><input type="number" id="start" required></td>
+        </tr>
+        <tr>
+            <td>Enter End Point:</td>
+            <td><input type="number" id="end" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button onclick="create()">CREATE</button></td>
+        </tr>
+    </table>
+    <h1 id="title"></h1>
+    <p id="res"></p>
+
+    <script>
+        function create(){
+            document.getElementById('res').innerHTML='';
+            num = parseInt(document.getElementById('num').value);
+            start = parseInt(document.getElementById('start').value);
+            end = parseInt(document.getElementById('end').value);
+
+            document.getElementById('title').innerHTML='TABLE OF '+num+' STARTING FROM '+start+' TO '+end+' IS';
+            for(i=start; i<=end; i++){
+                document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+num+' x '+i+' = '+(num*i)+"<br>"
+            }
+        }
+    </script>
+</body>
+</html>
