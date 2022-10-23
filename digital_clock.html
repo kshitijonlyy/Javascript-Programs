@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital_clock</title>
+    <style>
+        body{
+            background-image: url('../media/11.jpg');
+            background-size: cover;
+        }
+        div{
+            border-style: solid;
+            border-radius: 100px;
+            border-width: 1px;
+            font-family: monospace;
+            font-weight: bold;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            font-size: 25px;
+            text-align: center;
+        }
+        #res{
+            background-color: white;
+            width: 62%;
+            border-color: black;
+            height: 100px;
+            padding-top: 37px;
+            margin-top: 430px;
+        }
+        #res2{
+            background-color: rgb(106, 34, 34);
+            color: white;
+            border-color: white;
+            word-spacing: 10px;
+            width: 30%;
+            height: 80px;
+            padding-top: 26px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body onload="hit()">
+    <div id="res"></div>
+    <div id="res2"></div>
+
+    <script>
+        function hit(){
+            document.getElementById('res').innerHTML=Date();
+            document.getElementById('res2').innerHTML='CURRENT TIME IN INDIA'
+            setInterval(dateTime, 1000);
+            setInterval(color, 1000);
+            setInterval(color2, 2000);
+        }
+        function dateTime(){
+            date = Date();
+            document.getElementById('res').innerHTML=date;
+        }
+        function color(){
+            document.getElementById('res2').style.backgroundColor='rgb(65, 85, 36)'
+        }
+        function color2(){
+            document.getElementById('res2').style.backgroundColor='rgb(106, 34, 34)'
+        }
+    </script>
+</body>
+</html>
