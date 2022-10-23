@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stop_watch</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            font-size: 80px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            border-color: white;
+            border-width: 2px;
+            border-style: solid;
+            font-family: monospace;
+            letter-spacing: 3px;
+        }
+        .time{
+            float: left;
+            background-color: white;
+            height: 300px;
+            width: 33%;
+            margin-bottom: 10px;
+            color: black;
+            font-family: monospace;
+            font-size: 230px;
+            text-align: center;
+        }
+        #min, #sec{
+            margin-right: 0.5%;
+        }
+        .txt{
+            float: left;
+            background-color: white;
+            height: 30px;
+            width: 33%;
+            margin-bottom: 10px;
+            color: black;
+            font-family: monospace;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #txtMin, #txtSec{
+            margin-right: 0.5%;
+        }
+        .btn{
+            background-color: white;
+            font-family: monospace;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            width: 33.1%;
+        }
+        #btnStart{
+            margin-right: 0.1%;
+        }
+        #res{
+            font-size: 50px;
+            font-family: monospace;
+            text-align: center;
+            font-weight: bold;
+            border-color: white;
+            border-width: 2px;
+            border-style: solid;
+            margin-top: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+        .btn:hover{
+            background-color: rgba(225, 225, 225, 0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>STOP-WATCH</h1>
+        <div class="row1">
+            <div class="time" id="min">00</div>
+            <div class="time" id="sec">00</div>
+            <div class="time" id="millisec">00</div>
+        </div>
+        <div class="row2">
+            <div class="txt" id="txtMin">MINUTES</div>
+            <div class="txt" id="txtSec">SECONDS</div>
+            <div class="txt" id="txtMillisec">MILLI-SECONDS</div>
+        </div>
+        <div class="row3">
+            <button class="btn" id="btnStart" onclick="start()">START</button>
+            <button class="btn" id="btnStop" onclick="pause()">PAUSE</button>
+            <button class="btn" id="btnReset" onclick="reset()">RESET</button>
+        </div>
+        <div class="row4" id="res">NOT STOPPED YET</div>
+    </div>
+
+    <script>
+        function start(){
+            a = setInterval(milliSec, 10);
+            b = setInterval(sec, 10);
+            c = setInterval(min, 10);
+            document.getElementById('res').innerHTML='NOT STOPPED YET';
+        }
+        function milliSec(){
+            document.getElementById('millisec').innerHTML=parseInt(document.getElementById('millisec').innerHTML)+1;
+        }
+        function sec(){
+            if(document.getElementById('millisec').innerHTML>99){
+                document.getElementById('millisec').innerHTML=0;
+                document.getElementById('sec').innerHTML=parseInt(document.getElementById('sec').innerHTML)+1;
+            }
+        }
+        function min(){
+            if(document.getElementById('sec').innerHTML>59){
+                document.getElementById('sec').innerHTML=0;
+                document.getElementById('min').innerHTML=parseInt(document.getElementById('min').innerHTML)+1;
+            }
+        }
+        function pause(){
+            clearInterval(a);
+            endMS = document.getElementById('millisec').innerHTML
+            endS = document.getElementById('sec').innerHTML
+            endM = document.getElementById('min').innerHTML
+            document.getElementById('res').innerHTML='STOPPED AT>>> '+endM+':'+endS+':'+endMS;
+        }
+        function reset(){
+            document.getElementById('millisec').innerHTML='00';
+            document.getElementById('sec').innerHTML='00';
+            document.getElementById('min').innerHTML='00';
+            document.getElementById('res').innerHTML='NOT STOPPED YET';
+        }
+    </script>
+</body>
+</html>
