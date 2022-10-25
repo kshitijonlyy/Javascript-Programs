@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operators</title>
+    <style>
+        label{
+            font-size: 25px;
+        }
+        select, input{
+            font-size: 20px;
+            font-size: 20px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-right: 50px;
+        }
+        select{
+            text-align: left;
+            width: 200px;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <label>Enter Any Number: </label>
+    <input type="number" id="num" placeholder="Enter Any Number">
+    <br><br>
+    <label>Select: </label>
+    <select id="operator" onchange="hit()">
+        <option selected disabled>Select</option>
+        <option value="add">+</option>
+        <option value="diff">-</option>
+        <option value="prod">*</option>
+        <option value="div">/</option>
+    </select>
+    <div id="res"></div>
+
+    <script>
+        function hit(){
+            document.getElementById('res').innerHTML='';
+            num = document.getElementById('num').value;
+            if(document.getElementById('operator').value=='add'){
+                for(i=1; i<=num; i++){
+                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/12.png'>";
+                }
+            }
+            if(document.getElementById('operator').value=='diff'){
+                for(i=1; i<=num; i++){
+                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/13.jpg'>";
+                }
+            }
+            if(document.getElementById('operator').value=='prod'){
+                for(i=1; i<=num; i++){
+                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/14.png'>";
+                }
+            }
+            if(document.getElementById('operator').value=='div'){
+                for(i=1; i<=num; i++){
+                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/15.png'>";
+                }
+            }
+            else{}
+        }
+    </script>
+</body>
+</html>
