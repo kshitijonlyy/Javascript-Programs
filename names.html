@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>names</title>
+    <style>
+        label{
+            font-size: 25px;
+        }
+        button{
+            font-size: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-right: 20px;
+        }
+        input{
+            font-size: 20px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-right: 50px;
+        }
+        select{
+            font-size: 20px;
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-right: 50px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <label>Enter Names: </label>
+    <input type="text" id="inName">
+    <br><br><br>
+    <button onclick="add()">ADD</button>
+    <button onclick="show()">SHOW</button>
+    <br><br><br>
+    <label>Names Entered: </label>
+    <select id="outName">
+        <option selected disabled>Select</option>
+    </select>
+
+    <script>
+        function add(){
+            value = document.getElementById('inName').value;
+            document.getElementById('outName').innerHTML=document.getElementById('outName').innerHTML+"<option style='display: none;'>"+value+"</option>";
+            document.getElementById('inName').value='';
+        }
+        function show(){
+            L = document.getElementsByTagName('option').length;
+            for(i=1; i<L; i++){
+                document.getElementsByTagName('option')[i].style.display='block';
+            }
+        }
+    </script>
+</body>
+</html>
