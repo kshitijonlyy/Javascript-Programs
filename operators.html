@@ -45,28 +45,33 @@
     <script>
         function hit(){
             document.getElementById('res').innerHTML='';
-            num = document.getElementById('num').value;
+            num = parseInt(document.getElementById('num').value);
             if(document.getElementById('operator').value=='add'){
                 for(i=1; i<=num; i++){
-                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/12.png'>";
+                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/12.png' id='"+i+"' onclick='out(this.id)'>";
                 }
             }
             if(document.getElementById('operator').value=='diff'){
                 for(i=1; i<=num; i++){
-                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/13.jpg'>";
+                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/13.jpg' id='"+i+"' onclick='out(this.id)'>";
                 }
             }
             if(document.getElementById('operator').value=='prod'){
                 for(i=1; i<=num; i++){
-                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/14.png'>";
+                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/14.png' id='"+i+"' onclick='out(this.id)'>";
                 }
             }
             if(document.getElementById('operator').value=='div'){
                 for(i=1; i<=num; i++){
-                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/15.png'>";
+                    document.getElementById('res').innerHTML=document.getElementById('res').innerHTML+"<img src='../media/15.png' id='"+i+"' onclick='out(this.id)'>";
                 }
             }
             else{}
+        }
+
+        function out(num2){
+            document.getElementById('num').value=num+parseInt(num2);
+            document.getElementById('res').innerHTML='';
         }
     </script>
 </body>
