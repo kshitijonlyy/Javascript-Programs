@@ -8,12 +8,17 @@
 </head>
 <body id="backdrop">
     <label>Enter Anything: </label>
-    <input type="text" onkeyup="change()" onkeydown="change()">
+    <input type="text" id="txt" onkeyup="change()" onkeydown="change()">
 
     <script>
         function change(){
-            x = Math.floor(Math.random() * 16777215).toString(16);
-            document.getElementById('backdrop').style.backgroundColor='#'+x;
+            // using math() module
+            // x = Math.floor(Math.random() * 16777215).toString(16);
+            // document.getElementById('backdrop').style.backgroundColor='#'+x;
+
+            // simple code
+            x = document.getElementById('txt').value;
+            document.getElementById('backdrop').bgColor=x;
         }
     </script>
 </body>
