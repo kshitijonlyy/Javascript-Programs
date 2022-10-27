@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form1</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+            margin-top: 0px;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td{
+            font-size: 25px;
+        }
+        #blank{
+            height: 20px;
+        }
+        span{
+            color: red;
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            font-size: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        input::placeholder{
+            font-size: 18px;
+        }
+        #btn{
+            text-align: center;
+            padding-top: 40px;
+        }
+        button{
+            font-size: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .progress{
+            width: 100%;
+            height: 20px;
+            margin-top: 100px;
+            background-color: gray;
+        }
+        .error{
+            text-align: right;
+            font-size: 15px;
+            margin-top: 0px;
+            padding-top: 0px;
+            font-weight: bold;
+            color: red;
+            visibility: hidden;
+        }
+        .parts{
+            background-color: green;
+            width: 33.3%;
+            height: 20px;
+            float: left;
+            visibility: hidden;
+        }
+        #part3{
+            width: 33.4%;
+        }
+    </style>
+</head>
+<body>
+    <h1>FILL THE FORM</h1>
+    <form action="index.html" method="post" onsubmit="return hit()">
+        <table cellspacing="0px">
+            <tr>
+                <td><span>*</span>Name:</td>
+                <td><input type="text" name="name" id="name" placeholder="Enter Name" onkeydown="out()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error1" class="error">Please Fill This Field out</td>
+            </tr>
+            <tr>
+                <td id="blank"></td>
+            </tr>
+            <tr>
+                <td><span>*</span>Email:</td>
+                <td><input type="email" name="email" id="email" placeholder="Enter Email" onkeydown="out()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error2" class="error">Please Fill This Field out</td>
+            </tr>
+            <tr>
+                <td id="blank"></td>
+            </tr>
+            <tr>
+                <td><span>*</span>Password:</td>
+                <td><input type="password" name="password" id="password" placeholder="Enter Password" onkeydown="out()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error3" class="error">Please Fill This Field out</td>
+            </tr>
+            <tr>
+                <td colspan="2" id="btn"><button>SUBMIT</button></td>
+            </tr>
+        </table>
+        
+        <div class="progress">
+            <div id="part1" class="parts"></div>
+            <div id="part2" class="parts"></div>
+            <div id="part3" class="parts"></div>
+        </div>
+    </form>
+
+    <script>
+        function hit(){
+            name = document.getElementById('name').value
+            email = document.getElementById('email').value;
+            password = document.getElementById('password').value;
+
+            if(name==''){
+                document.getElementById('error1').style.visibility='visible';
+                return false;
+            }
+            else if(email==''){
+                document.getElementById('error2').style.visibility='visible';
+                return false;
+            }
+            else if(password==''){
+                document.getElementById('error3').style.visibility='visible';
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+        function out(){
+            name = document.getElementById('name').value
+            email = document.getElementById('email').value;
+            password = document.getElementById('password').value;
+
+            if(name!='' || email!='' || password!=''){
+                document.getElementById('part1').style.visibility='visible';
+                if(name!='' && email!='' && password==''){
+                    document.getElementById('part2').style.visibility='visible';
+                }
+                else if(name!='' && email=='' && password!=''){
+                    document.getElementById('part2').style.visibility='visible';
+                }
+                else if(name=='' && email!='' && password!=''){
+                    document.getElementById('part2').style.visibility='visible';
+                }
+                else if(name!='' && email!='' && password!=''){
+                    document.getElementById('part3').style.visibility='visible'
+                }
+                else{}
+            }
+        }
+    </script>
+</body>
+</html>
