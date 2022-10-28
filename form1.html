@@ -1,3 +1,5 @@
+<!-- USING NULL VALIDATIONS OF JAVASCRIPT ONLY -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,13 +69,10 @@
         }
         .parts{
             background-color: green;
-            width: 33.3%;
+            width: 50%;
             height: 20px;
             float: left;
             visibility: hidden;
-        }
-        #part3{
-            width: 33.4%;
         }
     </style>
 </head>
@@ -82,8 +81,8 @@
     <form action="index.html" method="post" onsubmit="return hit()">
         <table cellspacing="0px">
             <tr>
-                <td><span>*</span>Name:</td>
-                <td><input type="text" name="name" id="name" placeholder="Enter Name" onkeydown="out()"></td>
+                <td><span>*</span>Email:</td>
+                <td><input type="email" name="email" id="email" placeholder="Enter Email" onkeyup="out()"></td>
             </tr>
             <tr>
                 <td></td>
@@ -93,23 +92,12 @@
                 <td id="blank"></td>
             </tr>
             <tr>
-                <td><span>*</span>Email:</td>
-                <td><input type="email" name="email" id="email" placeholder="Enter Email" onkeydown="out()"></td>
+                <td><span>*</span>Password:</td>
+                <td><input type="password" name="password" id="password" placeholder="Enter Password" onkeyup="out()"></td>
             </tr>
             <tr>
                 <td></td>
                 <td id="error2" class="error">Please Fill This Field out</td>
-            </tr>
-            <tr>
-                <td id="blank"></td>
-            </tr>
-            <tr>
-                <td><span>*</span>Password:</td>
-                <td><input type="password" name="password" id="password" placeholder="Enter Password" onkeydown="out()"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td id="error3" class="error">Please Fill This Field out</td>
             </tr>
             <tr>
                 <td colspan="2" id="btn"><button>SUBMIT</button></td>
@@ -119,26 +107,20 @@
         <div class="progress">
             <div id="part1" class="parts"></div>
             <div id="part2" class="parts"></div>
-            <div id="part3" class="parts"></div>
         </div>
     </form>
 
     <script>
         function hit(){
-            name = document.getElementById('name').value
             email = document.getElementById('email').value;
             password = document.getElementById('password').value;
 
-            if(name==''){
+            if(email==''){
                 document.getElementById('error1').style.visibility='visible';
                 return false;
             }
-            else if(email==''){
-                document.getElementById('error2').style.visibility='visible';
-                return false;
-            }
             else if(password==''){
-                document.getElementById('error3').style.visibility='visible';
+                document.getElementById('error2').style.visibility='visible';
                 return false;
             }
             else{
@@ -147,26 +129,18 @@
         }
 
         function out(){
-            name = document.getElementById('name').value
             email = document.getElementById('email').value;
             password = document.getElementById('password').value;
 
-            if(name!='' || email!='' || password!=''){
+            document.getElementById('part1').style.visibility='hidden';
+            if(email!='' || password!=''){
                 document.getElementById('part1').style.visibility='visible';
-                if(name!='' && email!='' && password==''){
+                document.getElementById('part2').style.visibility='hidden';
+                if(email!='' && password!=''){
                     document.getElementById('part2').style.visibility='visible';
                 }
-                else if(name!='' && email=='' && password!=''){
-                    document.getElementById('part2').style.visibility='visible';
-                }
-                else if(name=='' && email!='' && password!=''){
-                    document.getElementById('part2').style.visibility='visible';
-                }
-                else if(name!='' && email!='' && password!=''){
-                    document.getElementById('part3').style.visibility='visible'
-                }
-                else{}
             }
+            else{}
         }
     </script>
 </body>
