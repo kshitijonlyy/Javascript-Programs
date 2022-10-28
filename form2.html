@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form2</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+            margin-top: 0px;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td{
+            font-size: 25px;
+        }
+        #blank{
+            height: 20px;
+        }
+        span{
+            color: red;
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            font-size: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        input::placeholder{
+            font-size: 18px;
+        }
+        #btn{
+            text-align: center;
+            padding-top: 40px;
+        }
+        button{
+            font-size: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .errors{
+            text-align: right;
+            font-size: 15px;
+            margin-top: 0px;
+            padding-top: 0px;
+            font-weight: bold;
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>FILL THE FORM</h1>
+    <form action="index.html" method="post" onsubmit="return execute()">
+        <table cellspacing="0px">
+            <tr>
+                <td><span>*</span>Name:</td>
+                <td><input name="name" id="name" placeholder="Enter Name" onkeyup="checkName(this.value)"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error1" class="errors">Please Fill This Field out</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error2" class="errors">Please Enter Alphabets Only</td>
+            </tr>
+            <tr>
+                <td id="blank"></td>
+            </tr>
+            <tr>
+                <td><span>*</span>Email:</td>
+                <td><input name="email" id="email" placeholder="Enter Email" onkeyup="checkEmail(this.value)"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error3" class="errors">Please Fill This Field out</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error4" class="errors">Please Enter Valid Email Address</td>
+            </tr>
+            <tr>
+                <td id="blank"></td>
+            </tr>
+            <tr>
+                <td><span>*</span>Contact Number:</td>
+                <td><input name="contact" id="contact" placeholder="Enter Contact Number" onkeyup="checkContact(this.value)"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error5" class="errors">Please Fill This Field out</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error6" class="errors">Please Enter Valid Contact Number</td>
+            </tr>
+            <tr>
+                <td id="blank"></td>
+            </tr>
+            <tr>
+                <td><span>*</span>Special Code:</td>
+                <td><input name="code" id="code" placeholder="e.g.> aaAA01" onkeyup="checkCode(this.value)"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error7" class="errors">Please Fill This Field out</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error8" class="errors">Please Follow The Pattern</td>
+            </tr>
+            <tr>
+                <td id="blank"></td>
+            </tr>
+            <tr>
+                <td><span>*</span>Password:</td>
+                <td><input type="password" name="password" id="password" placeholder="Enter Password" onkeyup="checkPass(this.value)"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error9" class="errors">Please Fill This Field out</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="error10" class="errors">Invalid Password</td>
+            </tr>
+            <tr>
+                <td colspan="2" id="btn"><button>SUBMIT</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function checkName(input){
+            var pattern = /^[a-zA-Z]/;
+            if(input==''){
+                document.getElementById('error1').style.display='block';
+                document.getElementById('error2').style.display='none';
+            }
+            else{
+                document.getElementById('error1').style.display='none';
+                if(pattern.test(input)){
+                    document.getElementById('error2').style.display='none';
+                }
+                else{
+                    document.getElementById('error2').style.display='block';
+                }
+            }
+
+        }
+        function checkEmail(input){
+            var pattern = /^[a-zA-Z0-9/-/./_]+\@+[a-zA-Z0-9]+\.+[a-zA-Z]{2,3}$/;
+            if(input==''){
+                document.getElementById('error3').style.display='block';
+                document.getElementById('error4').style.display='none';
+            }
+            else{
+                document.getElementById('error3').style.display='none';
+                if(pattern.test(input)){
+                    document.getElementById('error4').style.display='none';
+                }
+                else{
+                    document.getElementById('error4').style.display='block';
+                }
+            }
+        }
+
+        function checkContact(input){
+            var pattern = /^[0-9]{10}$/;
+            if(input==''){
+                document.getElementById('error5').style.display='block';
+                document.getElementById('error6').style.display='none';
+            }
+            else{
+                document.getElementById('error5').style.display='none';
+                if(pattern.test(input)){
+                    document.getElementById('error6').style.display='none';
+                }
+                else{
+                    document.getElementById('error6').style.display='block';
+                }
+            }
+        }
+
+        // function checkCode(input){
+        //     var pattern = /^[a-z]{2}+[A-Z]{2}+[0-9]{2}$/;
+        //     if(input==''){
+        //         document.getElementById('error7').style.display='block';
+        //         document.getElementById('error8').style.display='none';
+        //     }
+        //     else{
+        //         document.getElementById('error7').style.display='none';
+        //         if(pattern.test(input)){
+        //             document.getElementById('error8').style.display='none';
+        //         }
+        //         else{
+        //             document.getElementById('error8').style.display='block';
+        //         }
+        //     }
+        // }
+
+        function checkPass(input){
+            var pattern = /^[a-zA-Z0-9]{8,15}$/;
+            if(input==''){
+                document.getElementById('error9').style.display='block';
+                document.getElementById('error10').style.display='none';
+            }
+            else{
+                document.getElementById('error9').style.display='none';
+                if(pattern.test(input)){
+                    document.getElementById('error10').style.display='none';
+                }
+                else{
+                    document.getElementById('error10').style.display='block';
+                }
+            }
+        }
+
+        function execute(){
+            name = document.getElementById('name').value;
+            email = document.getElementById('email').value;
+            contact = document.getElementById('contact').value;
+            code = document.getElementById('code').value;
+            password = document.getElementById('password').value;
+
+            if(name==''){
+                document.getElementById('error1').style.display='block';
+                document.getElementById('error2').style.display='none';
+                return false;
+            }
+            else if(email==''){
+                document.getElementById('error3').style.display='block';
+                document.getElementById('error4').style.display='none';
+                return false;
+            }
+            else if(contact==''){
+                document.getElementById('error5').style.display='block';
+                document.getElementById('error6').style.display='none';
+                return false;
+            }
+            else if(code==''){
+                document.getElementById('error7').style.display='block';
+                document.getElementById('error8').style.display='none';
+                return false;
+            }
+            else if(password==''){
+                document.getElementById('error9').style.display='block';
+                document.getElementById('error10').style.display='none';
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
