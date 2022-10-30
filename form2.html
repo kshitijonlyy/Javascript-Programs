@@ -195,22 +195,22 @@
             }
         }
 
-        // function checkCode(input){
-        //     var pattern = /^[a-z]{2}+[A-Z]{2}+[0-9]{2}$/;
-        //     if(input==''){
-        //         document.getElementById('error7').style.display='block';
-        //         document.getElementById('error8').style.display='none';
-        //     }
-        //     else{
-        //         document.getElementById('error7').style.display='none';
-        //         if(pattern.test(input)){
-        //             document.getElementById('error8').style.display='none';
-        //         }
-        //         else{
-        //             document.getElementById('error8').style.display='block';
-        //         }
-        //     }
-        // }
+        function checkCode(input){
+            var pattern = /^[a-z]{2}[A-Z]+[0-9]{2}$/;
+            if(input==''){
+                document.getElementById('error7').style.display='block';
+                document.getElementById('error8').style.display='none';
+            }
+            else{
+                document.getElementById('error7').style.display='none';
+                if(pattern.test(input)){
+                    document.getElementById('error8').style.display='none';
+                }
+                else{
+                    document.getElementById('error8').style.display='block';
+                }
+            }
+        }
 
         function checkPass(input){
             var pattern = /^[a-zA-Z0-9]{8,15}$/;
