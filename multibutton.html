@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multibutton</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        .container{
+            width: 90%;
+            height: 550px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: pink;
+        }
+        .row1{
+            height: 150px;
+            box-sizing: border-box;
+            background-color: red;
+            text-align: center;
+        }
+        input{
+            margin-top: 60px;
+            font-size: 20px;
+            width: 300px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 5px;
+            border: transparent;
+        }
+        #input1{
+            margin-right: 50px;
+        }
+        #input2{
+            margin-left: 70px;
+        }
+        .row2{
+            height: 100px;
+            box-sizing: border-box;
+            background-color: aqua;
+            text-align: center;
+        }
+        button{
+            margin-top: 33px;
+            font-size: 18px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: 50px;
+            font-weight: bold;
+        }
+        #btn5{
+            margin-right: 0px;
+        }
+        .row3{
+            height: 300px;
+            box-sizing: border-box;
+            background-color: red;
+            text-align: center;
+        }
+        .box{
+            height: 250px;
+            width: 250px;
+            background-color: white;
+            float: left;
+            box-sizing: border-box;
+            margin-top: 25px; 
+            font-size: 25px;
+            padding-top: 100px;
+            font-weight: bold;
+        }
+        #box1{
+            margin-left: 250px;
+        }
+        #box2{
+            margin-left: 220px;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row1">
+            <input type="text" id="input1">
+            <input type="text" id="input2">
+        </div>
+        <div class="row2">
+            <button id="btn1" onclick="button1()">BUTTON 1</button>
+            <button id="btn2" onclick="button2()">BUTTON 2</button>
+            <button id="btn3" onclick="button3()">BUTTON 3</button>
+            <button id="btn4" onclick="button4()">BUTTON 4</button>
+            <button id="btn5" onclick="button5()">BUTTON 5</button>
+        </div>
+        <div class="row3">
+            <div class="box" id="box1">Hello</div>
+            <div class="box" id="box2">Bye</div>
+        </div>
+    </div>
+
+    <script>
+        function button1(){
+            input1 = document.getElementById('input1').value;
+            document.getElementById('input2').value=input1;
+        }
+
+        function button2(){
+            input1 = document.getElementById('input1').value;
+            box1 = document.getElementById('box1').innerHTML;
+            box2 = document.getElementById('box2').innerHTML;
+            alert(input1);
+            alert(box1);
+            alert(box2);
+        }
+
+        function button3(){
+            input1 = document.getElementById('input1').value;
+            document.getElementById('box2').innerHTML=input1;
+        }
+
+        function button4(){
+            input1 = document.getElementById('input1').value;
+            input2 = document.getElementById('input2').value;
+            document.getElementById('box1').innerHTML=document.getElementById('box1').innerHTML+' '+input1+' '+input2;
+        }
+        
+        function button5(){
+            document.getElementById('box2').style.backgroundImage="url('../media/4.jpg')";
+            document.getElementById('box2').style.color="white";
+            document.getElementById('input1').type='radio';
+            document.getElementById('input2').type='checkbox';
+        }
+    </script>
+</body>
+</html>
