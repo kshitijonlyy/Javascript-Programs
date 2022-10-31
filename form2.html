@@ -145,7 +145,7 @@
 
     <script>
         function checkName(input){
-            var pattern = /^[a-zA-Z]/;
+            var pattern = /^[a-zA-Z]{1,}$/;
             if(input==''){
                 document.getElementById('error1').style.display='block';
                 document.getElementById('error2').style.display='none';
@@ -179,7 +179,7 @@
         }
 
         function checkContact(input){
-            var pattern = /^[0-9]{10}$/;
+            var pattern = /^[6-9]{1}[0-9]{9}$/;
             if(input==''){
                 document.getElementById('error5').style.display='block';
                 document.getElementById('error6').style.display='none';
@@ -196,7 +196,7 @@
         }
 
         function checkCode(input){
-            var pattern = /^[a-z]{2}[A-Z]+[0-9]{2}$/;
+            var pattern = /^[a-z]{2}[A-Z]{2}[0-9]{2}$/;
             if(input==''){
                 document.getElementById('error7').style.display='block';
                 document.getElementById('error8').style.display='none';
@@ -213,7 +213,8 @@
         }
 
         function checkPass(input){
-            var pattern = /^[a-zA-Z0-9]{8,15}$/;
+            // quantifiers are used for special characters because all special characters are not included here
+            var pattern = /^[a-zA-Z0-9/./_/*/+/#/@/!]{8,15}$/;
             if(input==''){
                 document.getElementById('error9').style.display='block';
                 document.getElementById('error10').style.display='none';
