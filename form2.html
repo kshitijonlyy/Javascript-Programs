@@ -161,8 +161,9 @@
             }
 
         }
+        
         function checkEmail(input){
-            var pattern = /^[a-zA-Z0-9/-/./_]+\@+[a-zA-Z0-9]+\.+[a-zA-Z]{2,3}$/;
+            var pattern = /^[a-zA-Z0-9/-/./_]+\@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
             if(input==''){
                 document.getElementById('error3').style.display='block';
                 document.getElementById('error4').style.display='none';
